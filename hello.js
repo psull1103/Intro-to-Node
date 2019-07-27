@@ -1,6 +1,7 @@
 var http = require('http');
 var fs = require('fs');
 var url = require('url');
+const PORT = process.env.PORT || 5000;
 
 http.createServer(function (req, res) {
 	var q = url.parse(req.url, true);
@@ -18,10 +19,12 @@ http.createServer(function (req, res) {
 		return res.end();
 		};
 	});		
-}).listen(8080);
+//}).listen(8080);
+}).listen(PORT);
 
 
-console.log('Server listening on Port 8080...')
+//console.log('Server listening on Port 8080...')
+console.log('Server listening on Port 5000...')
 
 //fileName function: Allows req name to either include or exclude .html
 function fileName(q_path) {
